@@ -1,0 +1,16 @@
+{
+    "name": "eric/gastos-cli",
+    "description": "Gestor de gastos",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "EricNegreido",
+            "email": "ericnegreidooo@gmail.com"
+        }
+    ],
+    "require": {}
+}
