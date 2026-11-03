@@ -26,10 +26,11 @@ class MoneyFormatter
 
     static function parse(string $cents): ?int
     {
-      $cents = str_replace('.', ',', $cents);
-      $cents = explode(',', $cents);
-      $cents = $cents[1] ?? '';
-      return $cents ? (int) $cents : null;
+      $cents = str_replace('.', '', $cents);
+      $cents = str_replace(',', '', $cents);
+      return (int) $cents;
+
+
     }
 
     static function sum(int ...$amounts): int 

@@ -5,20 +5,21 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use App\MoneyFormatter;
 try {   
 
-$formatter = new MoneyFormatter();
+$formatter = MoneyFormatter::class;
 
-$num1 = $formatter->format(1245);
-$num2 = $formatter->format(2000123);
-$num3 = $formatter->format(300032);
+$num1 = $formatter::format(1245);
+$num2 = $formatter::format(2000123);
+$num3 = $formatter::format(300032);
 $numeros = [$num1, $num2, $num3];
-var_dump("numeros: formateados " . implode(', ', $numeros));
-var_dump("centavos:1 - " .  $formatter->parse($numeros[0]) ?: 'null');
-var_dump("centavos:2 - " . $formatter->parse($numeros[1]) ?: 'null');
-var_dump("centavos:3 - " . $formatter->parse($numeros[2]) ?: 'null');
-var_dump("suma: " . $formatter->sum(1000, 2000, 3000));
+var_dump("numeros: formateados " . implode(', ', $numeros)) . PHP_EOL;
+var_dump("centavos:1 - " .  $formatter::parse($numeros[0])) . PHP_EOL;
+var_dump("centavos:2 - " . $formatter::parse($numeros[1])) . PHP_EOL;
+var_dump("centavos:3 - " . $formatter::parse($numeros[2])) . PHP_EOL;
+var_dump("prueba de fuego: - " . $formatter::parse($formatter::format(154))) . PHP_EOL;
+var_dump("suma: " . $formatter::sum(1000, 2000, 3000)) . PHP_EOL;
 
-$num1 = $formatter->format(12.12);
+$num1 = $formatter::format(12.12) . PHP_EOL;
 
 } catch (TypeError) {
-    echo "Error: de formatos numericos\n";
+    echo "Error: de formatos numericos" . PHP_EOL;
 }
