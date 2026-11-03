@@ -36,6 +36,3 @@ class MoneyFormatter
         return array_sum($amounts);
     }
 }
-
-//Ejemplo de suma de montos y formateo
-

@@ -41,6 +41,23 @@ Fatal error: Uncaught Error: Class "App\MoneyFormatter" not found in /Users/usua
 Stack trace:
 #0 {main}
 
+1- ¿Qué pasa al llamar a sumar(int $a, int $b) con "12", con y sin strict_types?
+2- ¿Dónde se escribe declare(strict_types=1) y a qué llamadas afecta?
+3- ¿Qué diferencia hay entre composer.json y composer.lock, y cuál de los dos se sube a Git?
+4- Con el prefijo App\ apuntando a src/, ¿en qué ruta busca Composer la clase App\Money\Formatter?
+5- ¿Cuándo usarías ?string y cuándo string|int?
 
+1 Sin strict_types hace una conversion automatica de "12" a int para operar.
+ con stric_types ocurrira un faltarl error de un TypeError
+
+2 Se escribi al principio de cada archivo, afecta a las llamadas del mismo archivo
+
+3 composer.json tiene todas la depedencias del proyecto, configuraciones e informacion basica como nombre y descripcion, autor.
+el composer.lock es el controla las versiones de cada dependencia. 
+ambos se suben a git para tenerlos versionados.
+
+4 con App\ apuntando a src/ le estamos diciendo que la clase App\Money\Formatter esta en el directorio  src/Money en el archivo Formatter
+
+5 usaria ?string cuando espero un valor de retorno string o null. y string | int cuando espero un valor de retorno string o int.
 
 
