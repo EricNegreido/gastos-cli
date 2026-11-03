@@ -11,7 +11,7 @@ class MoneyFormatter
 
       $is_multiple_of_100 = $cents % 100 === 0;
       if($is_multiple_of_100) {
-        $cents = (string) ($cents / 100) . '00';
+        $cents = (string) ($cents / 100) . ',00';
       }else{
         if($cents % 10 === 0) {
           $cents = (string) ($cents / 100) . '0';
@@ -19,7 +19,8 @@ class MoneyFormatter
           $cents = (string) ($cents / 100);
         }
       }
-      return (string) $cents;
+
+      return (string) str_replace('.', ',', $cents);
     }
 
 
