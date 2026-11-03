@@ -21,3 +21,26 @@ function sumar($a, $b) :int {
 
 
 Los resultados fueron como esperaba.
+
+## Consigna 3
+
+qué hace parse con "12,50", "12.50", "12", "", "abc" y "-5", y por qué
+
+Para 12,50 y 12.50 la funcion retorna 50. Porque asi lo defini, se tiene encuenta si viene con . y lo replaza con , y Si viene con , directamente no hace nada el replace priemero, luego con explode obtengo los centavos y se hace el casteo a int al retornar el valor. Los demas casos devuelve Null, porque no tienen centavos.
+
+## Consigna 4
+
+Romper algo aproposito: cambie el namesapce de App a Ap del archvo MoneyFormatter, por lo tanto no se sigue el estandar de psr-4 y no encuentra el archivo correctamente. 
+
+PHP Fatal error:  Uncaught Error: Class "App\MoneyFormatter" not found in /Users/usuario/Desktop/Estudios/gastos-cli/bin/gastos:7
+Stack trace:
+#0 {main}
+  thrown in /Users/usuario/Desktop/Estudios/gastos-cli/bin/gastos on line 7
+
+Fatal error: Uncaught Error: Class "App\MoneyFormatter" not found in /Users/usuario/Desktop/Estudios/gastos-cli/bin/gastos:7
+Stack trace:
+#0 {main}
+
+
+
+
