@@ -28,7 +28,9 @@ class MoneyFormatter
     {
       $cents = str_replace('.', '', $cents);
       $cents = str_replace(',', '', $cents);
-      return (int) $cents;
+
+
+      return is_numeric($cents) ? (int) $cents : null;
 
 
     }
@@ -38,3 +40,6 @@ class MoneyFormatter
         return array_sum($amounts);
     }
 }
+
+var_dump(MoneyFormatter::parse("0")) . PHP_EOL;
+var_dump(MoneyFormatter::parse("abc")) . PHP_EOL;
